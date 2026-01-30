@@ -8,11 +8,16 @@ library(tidyverse)
 library(readxl)
 library(lubridate)
 
-# Set working directory to cleaned Excel files
-setwd("C:/Users/Sterg/Desktop/Google Drive - PC/Career Folder/Portfolio & Projects/Cyclistic Project 2026/clean data")
+# setwd("your/local/path/here")  # set working directory to cleaned Excel files
 
 # Load all Excel files from the folder
 files <- list.files(pattern = "\\.xlsx$", full.names = TRUE)
+
+if (length(files) == 0) {
+  message("No Excel files found. Data isn't included in this repo (size/licensing).")
+  message("If you want to run it: set your working directory and re-run.")
+  quit(save = "no", status = 0)
+}
 
 # Combine all Excel sheets into one dataframe
 all_trips <- files %>%
@@ -149,3 +154,4 @@ ggplot(top5_stations, aes(x = reorder(start_station_name, rides), y = rides, fil
   theme_minimal()
 
 # ---------------- END ---------------- #
+
