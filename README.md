@@ -8,7 +8,7 @@ How do casual riders and annual members use Cyclistic bikes differently?
 
 **data**  
 Public, anonymized Divvy Trip Data (City of Chicago Data License).  
-Raw data isn’t included due to size/licensing.
+This repository doesn’t include any data files — it's script-only for privacy and size reasons.
 
 **cleaning (Excel)**  
 - removed zero/negative durations  
